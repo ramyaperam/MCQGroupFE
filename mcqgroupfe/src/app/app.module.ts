@@ -8,9 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserLandingComponent } from './user-landing/user-landing.component';
+
 import { AdminLandingComponent } from './admin-landing/admin-landing.component';
 import { AdminTopicsComponent } from './admin-topics/admin-topics.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { HttpInterceptorServiceService } from './http-interceptor-service.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { SaLandingComponent } from './sa-landing/sa-landing.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +28,11 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     UserLandingComponent,
     AdminLandingComponent,
     AdminTopicsComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    UserRegisterComponent,
+    AdminRegisterComponent,
+    SaLandingComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,11 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorServiceService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
