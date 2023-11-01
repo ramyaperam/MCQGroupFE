@@ -1,0 +1,49 @@
+<p>admin-topics works!</p>
+
+<div class="container mt-4">
+    <h2>Topics</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Topic ID</th>
+                <th>Topic Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let topic of topics">
+                <td>{{ topic.topicId }}</td>
+                <td>{{ topic.topicName }}</td>
+                <td>
+                    <button class="btn btn-primary mr-2" (click)="viewQuestions(topic.topicId)">View</button>
+                    <button class="btn btn-danger mr-2" (click)="deleteTopic(topic.topicId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success mt-3" data-toggle="modal" data-target="#addTopicModal">Add Topic</button>
+</div>
+
+<!-- Add Topic Modal -->
+<div class="modal" id="addTopicModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Topic</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="topicName">Topic Name:</label>
+                    <input type="text" class="form-control" id="topicName" [(ngModel)]="newTopicName">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="saveTopic()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

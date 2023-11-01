@@ -8,13 +8,19 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserLandingComponent } from './user-landing/user-landing.component';
+import { AdminLandingComponent } from './admin-landing/admin-landing.component';
+import { AdminTopicsComponent } from './admin-topics/admin-topics.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginComponent,
-    UserLandingComponent
+    UserLandingComponent,
+    AdminLandingComponent,
+    AdminTopicsComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,
