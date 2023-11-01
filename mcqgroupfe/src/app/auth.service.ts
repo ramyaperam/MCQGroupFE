@@ -34,6 +34,7 @@ createBasicAuthToken(username: String, password: String) {
 registerSuccessfulLogin(credentials:Credentials,principal:Principal) {
   this.authenticatedUser= this.createBasicAuthToken(credentials.username,credentials.password)
   this.userdetails = principal
+  this.authenticated=true;
 }
 getAuthenticatedUser():string{
   return this.authenticatedUser;
