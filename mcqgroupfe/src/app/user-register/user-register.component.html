@@ -1,0 +1,30 @@
+<div class="w-50 p-3" style="margin: auto;">
+    <h3> Add your details</h3>
+<form (ngSubmit) ="onSubmit()" ngNativeValidate>
+   
+    <div class="form-group my-1">
+        <label class="m-1">FirstName</label>
+        <input type="text" class="form-control" id ="fname" [(ngModel)]="userDetails.firstName" name="fname" required>
+    </div>
+    <div class="form-group my-1">
+        <label class="m-1">LastName</label>
+        <input type="text" class="form-control" id ="lname" [(ngModel)]="userDetails.lastName" name="lname" required>
+    </div>
+    <div class="form-group my-1">
+        <label class="m-1">Email</label>
+        <input type="email" class="form-control" id ="age" [(ngModel)]="userDetails.email" name="email" required>
+    </div>
+    <div class="form-group my-1">
+        <label class="m-1">Username</label>
+        <input type="text" class="form-control" id ="mNum" [(ngModel)]="userDetails.username" name="uName" required>
+    </div>
+    <div class="form-group my-1">
+        <label class="m-1">Password</label>
+        <input type="password" class="form-control" id ="email" [(ngModel)]="userDetails.password" name="pass" required>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-success mt-3">Submit</button>
+</form>
+    </div>
+

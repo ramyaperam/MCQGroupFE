@@ -12,17 +12,20 @@ import { Credentials } from '../credentials';
 export class LoginComponent {
   credentials = new Credentials
   error:boolean
+  loginError:boolean
   constructor(private app: AuthService, private http: HttpClient, private router: Router) {
   }
 
   login() {
   this.app.authenticate(this.credentials).subscribe(data=>{
     console.log(data.principal)
-    this.redirectUser(data.principal.role);
     this.app.registerSuccessfulLogin(this.credentials,data.principal);
+    this.redirectUser(data.principal.role);
+    
   },
   error=>{
-    this.router.navigate(['login'])
+    this.loginError=true;
+    //this.router.navigate(['login'])
   })
     
     return false;
@@ -35,7 +38,11 @@ export class LoginComponent {
     }
     if(role==='ADMIN'){
       console.log("Admin")
-      this.router.navigate(['user-landing'])
+      this.router.navigate(['register-user'])
+    }
+    if(role==='SU'){
+      console.log("SU")
+      this.router.navigate(['su-landing'])
     }
   }
 }

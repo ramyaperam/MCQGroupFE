@@ -4,4 +4,5 @@ export class Principal {
     role:string;
     firstName:string;
     lastName:string;
+    accountNonLocked:boolean
 }
