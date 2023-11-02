@@ -41,6 +41,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'',component:HomePageComponent},
   {path:'user-landing',component:UserLandingComponent},
+  {path:'admin-landing', redirectTo: '/admin', pathMatch: 'full'},
   { path: 'admin', component: AdminLandingComponent },
   { path: 'admin/topics', component: AdminTopicsComponent },
   { path: 'admin/users', component: AdminUsersComponent },
