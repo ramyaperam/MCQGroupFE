@@ -19,7 +19,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { SaLandingComponent } from './sa-landing/sa-landing.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+
 import { QuestionListComponent } from './question-list/question-list.component';
+import { CanActivateRouteGuardSUService } from './can-activate-route-guard-su.service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { QuestionListComponent } from './question-list/question-list.component';
     AdminRegisterComponent,
     SaLandingComponent,
     EditUserComponent,
+
     QuestionListComponent
+    HeaderComponent
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,7 @@ import { QuestionListComponent } from './question-list/question-list.component';
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorServiceService,
     multi: true
-  }],
+  },CanActivateRouteGuardSUService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

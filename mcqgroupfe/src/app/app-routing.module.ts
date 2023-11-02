@@ -13,6 +13,8 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
 import { SaLandingComponent } from './sa-landing/sa-landing.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { QuestionListComponent } from './question-list/question-list.component';
+import { CanActivateRouteGuardSUService } from './can-activate-route-guard-su.service';
+
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -22,10 +24,16 @@ const routes: Routes = [
   { path: 'admin/topics', component: AdminTopicsComponent },
   { path: 'admin/users', component: AdminUsersComponent },
   {path:'register-user',component:UserRegisterComponent},
+
   {path:'register-admin',component:AdminRegisterComponent},
   {path:'su-landing',component:SaLandingComponent},
   {path:'edit-user',component:EditUserComponent},
   { path: 'questions/:topicId', component: QuestionListComponent }
+
+  {path:'register-admin',component:AdminRegisterComponent,canActivate:[CanActivateRouteGuardSUService]},
+  {path:'su-landing',component:SaLandingComponent,canActivate:[CanActivateRouteGuardSUService]},
+  {path:'edit-user',component:EditUserComponent,canActivate:[CanActivateRouteGuardSUService]}
+
 ];
 
 @NgModule({
