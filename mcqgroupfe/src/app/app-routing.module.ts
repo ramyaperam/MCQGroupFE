@@ -20,6 +20,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'',component:HomePageComponent},
   {path:'user-landing',component:UserLandingComponent},
+  {path:'admin-landing', redirectTo: '/admin', pathMatch: 'full'},
   { path: 'admin', component: AdminLandingComponent },
   { path: 'admin/topics', component: AdminTopicsComponent },
   { path: 'admin/users', component: AdminUsersComponent },
@@ -28,7 +29,7 @@ const routes: Routes = [
   {path:'register-admin',component:AdminRegisterComponent},
   {path:'su-landing',component:SaLandingComponent},
   {path:'edit-user',component:EditUserComponent},
-  { path: 'questions/:topicId', component: QuestionListComponent }
+  { path: 'questions/:topicId', component: QuestionListComponent },
 
   {path:'register-admin',component:AdminRegisterComponent,canActivate:[CanActivateRouteGuardSUService]},
   {path:'su-landing',component:SaLandingComponent,canActivate:[CanActivateRouteGuardSUService]},
