@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:'register-admin',component:AdminRegisterComponent},
   {path:'su-landing',component:SaLandingComponent},
   {path:'edit-user',component:EditUserComponent},
-  { path: 'questions/:topicId', component: QuestionListComponent }
+  { path: 'questions/:topicId', component: QuestionListComponent },
 
   {path:'register-admin',component:AdminRegisterComponent,canActivate:[CanActivateRouteGuardSUService]},
   {path:'su-landing',component:SaLandingComponent,canActivate:[CanActivateRouteGuardSUService]},
