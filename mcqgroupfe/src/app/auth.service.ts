@@ -4,6 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Credentials } from './credentials';
 import { Observable, map } from 'rxjs';
 import { Principal } from './principal';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,9 +14,11 @@ export class AuthService {
   public password: String;
   authenticatedUser:string;
   userdetails:Principal;
-  
+  isUser:boolean
+  isAdmin:boolean
+  isSU:boolean
   // credentials=new Credential();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router:Router) { }
   authenticate(credentials:Credentials):Observable<Credentials> {
     const headers = new HttpHeaders(credentials ? {
       authorization : this.createBasicAuthToken(credentials.username,credentials.password)
@@ -35,6 +38,14 @@ registerSuccessfulLogin(credentials:Credentials,principal:Principal) {
   this.authenticatedUser= this.createBasicAuthToken(credentials.username,credentials.password)
   this.userdetails = principal
   this.authenticated=true;
+  console.log(principal.role);
+  if(principal.role==='USER') this.isUser=true
+  if(principal.role==='ADMIN') this.isAdmin=true
+  if(principal.role==='SU') {
+    this.isSU=true
+    console.log(this.isSU);
+    
+  }
 }
 getAuthenticatedUser():string{
   return this.authenticatedUser;
@@ -47,6 +58,19 @@ getUserDetails(id:number){
     authorization : this.getAuthenticatedUser()
 } );
 return this.http.get<Principal>(`http://localhost:8081/get/${id}`, {headers: headers})
+}
+logout(){
+  this.isAdmin=this.isSU=this.isUser=false;
+  this.authenticated=false; 
+  console.log("Logout");
+  
+  this.http.get(`http://localhost:8081/logout`).subscribe(data=>{
+    this.router.navigate(['login'])
+  },
+  error=>{
+    this.router.navigate(['login'])
+  })
+  
 }
 }
 

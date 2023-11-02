@@ -53,4 +53,7 @@ addAdmin(){
 addUser(){
   this.router.navigate(['register-user'])
 }
+logout(){
+  this.auth.logout();
+}
 }
