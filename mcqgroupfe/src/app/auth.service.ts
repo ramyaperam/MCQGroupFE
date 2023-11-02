@@ -65,10 +65,10 @@ logout(){
   console.log("Logout");
   
   this.http.get(`http://localhost:8081/logout`).subscribe(data=>{
-    this.router.navigate(['login'])
+    this.router.navigate(['/'])
   },
   error=>{
-    this.router.navigate(['login'])
+    this.router.navigate(['/'])
   })
   
 }
