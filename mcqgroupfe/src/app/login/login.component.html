@@ -1,0 +1,35 @@
+
+
+<div class="container">
+	<header></header>
+	<h2 class="my-2">Enter your Credentials</h2>
+	<form (submit)="login()">
+	  <div class="form-group">
+		<label for="uname">Username:</label>
+		<input
+		  type="text"
+		  class="form-control"
+		  id="uname"
+		  [(ngModel)]="credentials.username"
+		  name="uname"
+		  required
+		/>
+	  </div>
+	  <div class="form-group">
+		<label for="pwd">Password:</label>
+		<input
+		  type="password"
+		  class="form-control"
+		  id="pwd"
+		  [(ngModel)]="credentials.password"
+		  name="pwd"
+		  required
+		/>
+	  </div>
+	  <div class="alert alert-danger" *ngIf="loginError">
+		Login failed. Please check your credentials.
+	  </div>
+	  <button type="submit" class="btn btn-primary">Login</button>
+	</form>
+  </div>
+  
