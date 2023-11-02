@@ -1,19 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { TopicService } from '../topic.service';
-import * as $ from 'jquery';
+import { MatDialog } from '@angular/material/dialog';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-admin-topics',
   templateUrl: './admin-topics.component.html',
   styleUrls: ['./admin-topics.component.css']
 })
 export class AdminTopicsComponent implements OnInit {
-  topics: any[];
-  newTopicName: string = '';
+ // newTopicName: string = '';
   router: any;
+  topics: any[];
+  topicForm: FormGroup;
+  isAddingTopic: boolean = false;
 
-  constructor(private topicService: TopicService) {}
+  constructor(
+    private topicService: TopicService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
+    // Initialize form
+    this.topicForm = this.fb.group({
+      topicName: ['', Validators.required]
+    });
+
     // Fetch topics during initialization
     this.fetchTopics();
   }
@@ -24,19 +36,25 @@ export class AdminTopicsComponent implements OnInit {
     });
   }
 
-  saveTopic() {
-    if (this.newTopicName.trim() === '') {
-      // Handle empty topic name, show error message, etc.
-      return;
+  toggleAddTopicForm() {
+    this.isAddingTopic = !this.isAddingTopic;
+    if (!this.isAddingTopic) {
+      this.topicForm.reset();
     }
-
-    this.topicService.addTopic({ topicName: this.newTopicName }).subscribe(() => {
-      // Topic added successfully, close the modal and fetch updated topics
-      this.newTopicName = '';
-     // $('#addTopicModal').modal('hide');
-      this.fetchTopics();
-    });
   }
+
+  saveTopic() {
+    const topicControl = this.topicForm.get('topicName');
+    
+    if (topicControl && topicControl.valid) {
+      const topicName = topicControl.value;
+      this.topicService.addTopic({ topicName }).subscribe(() => {
+        this.fetchTopics();
+        this.toggleAddTopicForm();
+      });
+    }
+  }
+
   deleteTopic(topicId: number) {
     if (confirm('Are you sure you want to delete this topic?')) {
       this.topicService.deleteTopic(topicId).subscribe(() => {
@@ -45,9 +63,10 @@ export class AdminTopicsComponent implements OnInit {
       });
     }
   }
-
   viewQuestions(topicId: number) {
     this.router.navigate(['/admin/topics', topicId]);
   }
-
+  //  
 }
+
+

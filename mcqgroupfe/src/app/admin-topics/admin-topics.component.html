@@ -15,35 +15,24 @@
                 <td>{{ topic.topicId }}</td>
                 <td>{{ topic.topicName }}</td>
                 <td>
-                    <button class="btn btn-primary mr-2" (click)="viewQuestions(topic.topicId)">View</button>
+                    <button class="btn btn-primary mt-3" [routerLink]="['/questions', topic.topicId]">View</button>
                     <button class="btn btn-danger mr-2" (click)="deleteTopic(topic.topicId)">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-success mt-3" data-toggle="modal" data-target="#addTopicModal">Add Topic</button>
-</div>
+    <button class="btn btn-success mt-3" (click)="toggleAddTopicForm()">Add Topic</button>
 
-<!-- Add Topic Modal -->
-<div class="modal" id="addTopicModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add Topic</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- Add Topic Form -->
+    <div *ngIf="isAddingTopic">
+        <form [formGroup]="topicForm" class="mt-3">
+            <div class="form-group">
+                <label for="topicName">Topic Name:</label>
+                <input type="text" class="form-control" id="topicName" formControlName="topicName">
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="topicName">Topic Name:</label>
-                    <input type="text" class="form-control" id="topicName" [(ngModel)]="newTopicName">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="saveTopic()">Save</button>
-            </div>
-        </div>
+            <br>
+            <button type="button" class="btn btn-primary" (click)="saveTopic()">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="toggleAddTopicForm()">Cancel</button>
+        </form>
     </div>
 </div>

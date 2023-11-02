@@ -2,13 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "types": ["jquery", "other-types-if-any"],
     "strictPropertyInitialization": false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
+    "strictNullChecks": false,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

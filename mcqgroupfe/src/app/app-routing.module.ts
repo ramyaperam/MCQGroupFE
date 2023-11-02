@@ -12,6 +12,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { SaLandingComponent } from './sa-landing/sa-landing.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { QuestionListComponent } from './question-list/question-list.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'register-user',component:UserRegisterComponent},
   {path:'register-admin',component:AdminRegisterComponent},
   {path:'su-landing',component:SaLandingComponent},
-  {path:'edit-user',component:EditUserComponent}
+  {path:'edit-user',component:EditUserComponent},
+  { path: 'questions/:topicId', component: QuestionListComponent }
 ];
 
 @NgModule({
