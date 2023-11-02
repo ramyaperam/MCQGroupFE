@@ -39,7 +39,7 @@ import { HeaderComponent } from './header/header.component';
     SaLandingComponent,
     EditUserComponent,
 
-    QuestionListComponent
+    QuestionListComponent,
     HeaderComponent
 
   ],
