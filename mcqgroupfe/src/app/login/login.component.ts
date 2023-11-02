@@ -38,7 +38,7 @@ export class LoginComponent {
     }
     if(role==='ADMIN'){
       console.log("Admin")
-      this.router.navigate(['register-user'])
+      this.router.navigate(['admin'])
     }
     if(role==='SU'){
       console.log("SU")

@@ -1,0 +1,35 @@
+<p>question-list works!</p>
+<div class="container mt-4">
+    <h2>Question List</h2>
+
+    <!-- Table to display questions -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Options</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let question of questions">
+                <td>{{ question.question }}</td>
+                <td>
+                    <ul>
+                        <li>{{ question.opt1 }}</li>
+                        <li>{{ question.opt2 }}</li>
+                        <li>{{ question.opt3 }}</li>
+                        <li>{{ question.opt4 }}</li>
+                    </ul>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="editQuestion(question.qnNo)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteQuestion(question.qnNo)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Button to add a new question -->
+    <button class="btn btn-success" (click)="addQuestion()">Add Question</button>
+</div>
