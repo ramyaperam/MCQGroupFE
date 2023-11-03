@@ -21,7 +21,7 @@ export class HeaderComponent {
     console.log("Hi");
     if(this.isSU) this.dash='/su-landing'
     if(this.isUser) this.dash='/user-landing'
-    if(this.isAdmin) this.dash='/admin-landing'
+    if(this.isAdmin) this.dash='/admin'
     
   }
   @Input() headerType = 1
