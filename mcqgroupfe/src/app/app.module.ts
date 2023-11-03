@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
-import { HeaderComponent } from './header/header.component';
 
 import { PreviousSubmissionsComponent } from './previous-submissions/previous-submissions.component';
 
@@ -49,7 +48,7 @@ import { AddQuestionFormComponent } from './add-question-form/add-question-form.
     DashboardComponent,
     ActivityComponent,
     HistoryComponent,
-    TopicsComponent
+    TopicsComponent,
 
     LoginComponent,
     UserLandingComponent,
