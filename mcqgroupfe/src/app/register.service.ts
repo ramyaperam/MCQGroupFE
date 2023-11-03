@@ -34,4 +34,10 @@ editAdmin(user:User){
 console.log(this.auth.getAuthenticatedUser());
 return this.http.post<any>(`http://localhost:8081/editAdmin`, user)
 }
+editUser(user:User){
+    
+  console.log(this.auth.getAuthenticatedUser());
+  return this.http.post<any>(`http://localhost:8081/editUser`, user)
+  }
+
 }
