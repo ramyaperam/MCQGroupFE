@@ -4,6 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
+
+
+import { PreviousSubmissionsComponent } from './previous-submissions/previous-submissions.component';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ActivityComponent } from './activity/activity.component';
+import { HistoryComponent } from './history/history.component';
+import { TopicsComponent } from './topics/topics.component';
+
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,10 +35,21 @@ import { HeaderComponent } from './header/header.component';
 import { AddQuestionFormComponent } from './add-question-form/add-question-form.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+
+    HeaderComponent,
+
+    PreviousSubmissionsComponent,
+
+    DashboardComponent,
+    ActivityComponent,
+    HistoryComponent,
+    TopicsComponent,
+
     LoginComponent,
     UserLandingComponent,
     AdminLandingComponent,

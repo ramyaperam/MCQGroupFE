@@ -19,6 +19,7 @@ export class HeaderComponent {
     this.isAdmin = this.auth.isAdmin;
     this.isSU  = this.auth.isSU;
     console.log("Hi");
+
     if(this.isSU) this.dash='/su-landing'
     if(this.isUser) this.dash='/user-landing'
     if(this.isAdmin) this.dash='/admin'
