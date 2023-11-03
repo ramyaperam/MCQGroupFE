@@ -1,0 +1,29 @@
+<div class="add-question-form">
+    <label for="question">Question:</label>
+    <input type="text" id="question" [(ngModel)]="newQuestion.question" required>
+
+    <label for="opt1">Option 1:</label>
+    <input type="text" id="opt1" [(ngModel)]="newQuestion.opt1" required>
+
+    <label for="opt2">Option 2:</label>
+    <input type="text" id="opt2" [(ngModel)]="newQuestion.opt2" required>
+
+    <label for="opt3">Option 3:</label>
+    <input type="text" id="opt3" [(ngModel)]="newQuestion.opt3" required>
+
+    <label for="opt4">Option 4:</label>
+    <input type="text" id="opt4" [(ngModel)]="newQuestion.opt4" required>
+
+    <!-- <label for="correctAnswer">Correct Answer:</label>
+    <input type="text" id="correctAnswer" [(ngModel)]="newQuestion.correctAnswer" required> -->
+    <label for="correctAnswer">Correct Answer:</label>
+    <select id="correctAnswer" [(ngModel)]="newQuestion.correctAnswer" required>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+  </select>
+
+    <button type="button" class="btn btn-success" (click)="submitQuestion()">Submit</button>
+    <button type="button" class="close-btn" (click)="closeForm()">Cancel</button>
+</div>

@@ -23,6 +23,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { CanActivateRouteGuardSUService } from './can-activate-route-guard-su.service';
 import { HeaderComponent } from './header/header.component';
+import { AddQuestionFormComponent } from './add-question-form/add-question-form.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HeaderComponent } from './header/header.component';
     EditUserComponent,
 
     QuestionListComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddQuestionFormComponent
 
   ],
   imports: [

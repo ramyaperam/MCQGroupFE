@@ -1,4 +1,4 @@
-.add-topic-form {
+.add-question-form {
     background-color: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
@@ -9,7 +9,8 @@
     top: 50px;
 }
 
-.add-topic-form input {
+.add-question-form input,
+.add-question-form select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -17,7 +18,7 @@
     border-radius: 4px;
 }
 
-.add-topic-form button {
+.add-question-form button {
     width: 100%;
     padding: 10px;
     background-color: #4caf50;
@@ -28,14 +29,14 @@
     transition: background-color 0.3s;
 }
 
-.add-topic-form button:hover {
+.add-question-form button:hover {
     background-color: #45a049;
 }
 
-.add-topic-form .close-btn {
+.add-question-form .close-btn {
     background-color: #f44336;
 }
 
-.add-topic-form .close-btn:hover {
+.add-question-form .close-btn:hover {
     background-color: #d32f2f;
 }
