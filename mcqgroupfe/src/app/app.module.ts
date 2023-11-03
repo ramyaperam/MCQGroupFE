@@ -33,6 +33,7 @@ import { QuestionListComponent } from './question-list/question-list.component';
 import { CanActivateRouteGuardSUService } from './can-activate-route-guard-su.service';
 import { HeaderComponent } from './header/header.component';
 import { AddQuestionFormComponent } from './add-question-form/add-question-form.component';
+import { EditAdminComponent } from './edit-admin/edit-admin.component';
 
 
 
@@ -62,7 +63,8 @@ import { AddQuestionFormComponent } from './add-question-form/add-question-form.
 
     QuestionListComponent,
     HeaderComponent,
-    AddQuestionFormComponent
+    AddQuestionFormComponent,
+    EditAdminComponent
 
   ],
   imports: [

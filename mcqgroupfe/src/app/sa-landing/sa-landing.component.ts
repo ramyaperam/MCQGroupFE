@@ -32,6 +32,12 @@ editUser(user:User){
   this.router.navigate(['edit-user']);
   
 }
+editAdmin(user:User){
+  console.log(user);
+  this.getDetails.setUser(user);
+  this.router.navigate(['edit-admin']);
+  
+}
 deleteUser(user:User){
   
   this.getDetails.deleteUser(user.userId).subscribe(data=>{

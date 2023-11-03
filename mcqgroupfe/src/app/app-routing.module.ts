@@ -19,6 +19,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { SaLandingComponent } from './sa-landing/sa-landing.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditAdminComponent } from './edit-admin/edit-admin.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { CanActivateRouteGuardSUService } from './can-activate-route-guard-su.service';
 
@@ -55,7 +56,8 @@ const routes: Routes = [
 
   {path:'register-admin',component:AdminRegisterComponent,canActivate:[CanActivateRouteGuardSUService]},
   {path:'su-landing',component:SaLandingComponent,canActivate:[CanActivateRouteGuardSUService]},
-  {path:'edit-user',component:EditUserComponent,canActivate:[CanActivateRouteGuardSUService]}
+  {path:'edit-user',component:EditUserComponent,canActivate:[CanActivateRouteGuardSUService]},
+  {path:'edit-admin',component:EditAdminComponent,canActivate:[CanActivateRouteGuardSUService]}
 
 
 ];
