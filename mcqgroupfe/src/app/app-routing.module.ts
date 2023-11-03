@@ -25,9 +25,10 @@ import { CanActivateRouteGuardSUService } from './can-activate-route-guard-su.se
 import { TopicsComponent } from './topics/topics.component';
 
 
+
 const routes: Routes = [
   
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+
 
   { path: 'dashboard', component: DashboardComponent, children: [
     
@@ -40,7 +41,7 @@ const routes: Routes = [
   { path: 'submissions', component: PreviousSubmissionsComponent },
   {path:'login',component:LoginComponent},
   {path:'',component:HomePageComponent},
-  {path:'user-landing',component:UserLandingComponent},
+  {path:'user-landing', redirectTo: '/dashboard', pathMatch: 'full'},
   {path:'admin-landing', redirectTo: '/admin', pathMatch: 'full'},
   { path: 'admin', component: AdminLandingComponent },
   { path: 'admin/topics', component: AdminTopicsComponent },
