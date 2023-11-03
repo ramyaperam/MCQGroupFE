@@ -1,0 +1,35 @@
+/* header {
+    background-color: #0074d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tiny-logo {
+    width: 1px; 
+    height: 1px; 
+    margin-right: 5px;
+  }
+  
+  .logo-text {
+    font-size: 2px; 
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  nav {
+    display: flex;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+   */

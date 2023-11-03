@@ -1,12 +1,27 @@
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+
+@Component({
+  selector: 'app-header',
+
 import { Component, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'header',
+
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  constructor(private router: Router) {}
+  navigateToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
   constructor(private auth:AuthService){}
   loggedIn=false;
   isUser:boolean
@@ -31,4 +46,5 @@ export class HeaderComponent {
     
     this.auth.logout();
   }
+
 }
