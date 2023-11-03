@@ -1,4 +1,5 @@
 <header></header>
+
 <div class="container mt-4">
     <h2>Question List</h2>
 
@@ -23,7 +24,7 @@
                     </ul>
                 </td>
                 <td>
-                    <button class="btn btn-primary" (click)="editQuestion(question.qnNo)">Edit</button>
+                    <button class="btn btn-primary" (click)="editQuestion(question)">Edit</button>
                     <button class="btn btn-danger" (click)="deleteQuestion(question.qnNo)">Delete</button>
                 </td>
             </tr>
@@ -31,5 +32,11 @@
     </table>
 
     <!-- Button to add a new question -->
-    <button class="btn btn-success" (click)="addQuestion()">Add Question</button>
+    <button class="btn btn-success" (click)="openAddQuestionForm()">Add Question</button>
+
+    <!-- Add Question Form (Initially hidden) -->
+    <!-- <app-add-question-form *ngIf="showAddQuestionForm" [topicId]="topicId" (questionAdded)="addQuestion($event)" (formClosed)="closeAddQuestionForm()"></app-add-question-form> -->
+    <app-add-question-form [topicId]="topicId" [questionToEdit]="questionToEdit" (questionAdded)="addQuestion($event)" (questionEdited)="onQuestionEdited($event)" (formClosed)="onFormClosed()" *ngIf="showAddQuestionForm"></app-add-question-form>
+
+
 </div>
